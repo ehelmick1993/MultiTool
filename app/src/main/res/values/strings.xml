@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Multi-Tool</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Multi-Tool</string>
+    <string name="nav_header_subtitle">eddieiconia@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_0">0</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_neg">\u00B1</string>
+    <string name="button_null">NULL</string>
+    <string name="button_prcnt">%</string>
+    <string name="button_pwr">^</string>
+    <string name="button_clr">C</string>
+    <string name="button_dec">.</string>
+    <string name="button_mult">*</string>
+    <string name="button_sub">-</string>
+    <string name="button_div">\u00F7</string>
+    <string name="button_add">+</string>
+    <string name="button_eql">=</string>
+
+    <string-array name="conversions">
+        <item>Select:</item>
+        <item>Inches</item>
+        <item>Centimeters</item>
+        <item>Feet</item>
+        <item>Meters</item>
+        <item>Miles</item>
+        <item>Kilometers</item>
+        <item>Yards</item>
+
+    </string-array>
+
+</resources>

@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/entertotal"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:gravity="center"
+        android:text="Enter Total Bill:"
+        android:textSize="40sp" />
+    <EditText
+        android:id="@+id/initialbill"
+        android:layout_width="match_parent"
+        android:layout_below="@id/entertotal"
+        android:layout_height="300px"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:digits="0123456789."
+        android:gravity="center"
+        android:textSize="40sp" />
+
+
+    <TextView
+        android:id="@+id/tippercent"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:layout_below="@id/initialbill"
+        android:gravity="center"
+        android:textSize="20sp" />
+    <SeekBar
+        android:id="@+id/seekbar"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="100px"
+        android:layout_below="@id/tippercent"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:max="30"
+        android:progress="20"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tiptotal"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:layout_below="@id/seekbar"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/finalbill"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:layout_below="@id/tiptotal"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
