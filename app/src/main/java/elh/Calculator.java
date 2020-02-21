@@ -14,12 +14,14 @@ import edu.vccs.email.elh22232.lab.myapp.R;
 
 //known bugs:
 //if operand button is pressed before appropriate entry, app crashes
+
 //need to add decimal button functions
 //need to add carrot button functions
 //need to add percent button functions
 
 public class Calculator extends Fragment {
-
+    
+    //create ui elements
     private Button zero;
     private Button one;
     private Button two;
@@ -54,16 +56,18 @@ public class Calculator extends Fragment {
     private String temp;
 
 
-
-
-
+    //on create method to start gui thread    
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //create activity title
         getActivity().setTitle("Calculator");
+        
+        //call method to build ui
         setupUIView();
 
+        //on click method for clear button
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +76,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 0 button
         zero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +84,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 1 button
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +92,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 2 button
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +100,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 3 button
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +108,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 4 button
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +116,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 5 button
         five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +124,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 6 button
         six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +132,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 7 button
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,6 +140,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 8 button
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,13 +148,15 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for 9 button
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 displayInfo.setText(displayInfo.getText().toString() + "9");
             }
         });
-
+        
+        //on click method for + button
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,6 +169,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for - button
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,6 +182,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for * button
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,6 +195,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for / button
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -190,6 +208,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for ^ button
         power.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -202,6 +221,7 @@ public class Calculator extends Fragment {
             }
         });
 
+        //on click method for = button
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +238,7 @@ public class Calculator extends Fragment {
 
     }
 
+    //app drawer control
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -225,6 +246,7 @@ public class Calculator extends Fragment {
         return inflater.inflate(R.layout.calculator, container, false);
     }
 
+    //links java gui elements to xml elements
     private void setupUIView(){
 
         zero = (Button)getView().findViewById(R.id.button_0);
@@ -251,17 +273,19 @@ public class Calculator extends Fragment {
         displayInfo = (TextView)getView().findViewById(R.id.displayinfo);
     }
 
+    //refreshes int values for val1 and val2
     private void refreshApp(){
         val1 = Double.NaN;
         val2 = Double.NaN;
         displayInfo.setText("");
     }
 
-
+    //method to performe computations based on user click
     private void compute(){
         if(!Double.isNaN(val1)){
             val2 = Double.parseDouble(displayInfo.getText().toString());
 
+            //switch steps through proper cases to calculate value based on user selection
             switch (ACTION){
                 case ADDITION:
                     val1 = val1 + val2;
@@ -281,6 +305,8 @@ public class Calculator extends Fragment {
                     break;
             }
         }
+        
+        //set display value to val1 if no operation is performed
         else{
             val1 = Double.parseDouble(displayInfo.getText().toString());
         }
